@@ -14,8 +14,7 @@
       "clean:dist": "node scripts/clean.js --dist --.nx"
     },
     "workspaces": [
-      "apps/*",
-      "packages/"
+      "apps/*"
     ],
     "devDependencies": {
       "nx": "^17.2.8"
