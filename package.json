@@ -5,11 +5,12 @@
     "private": true,
     "type": "module",
     "scripts": {
-      "build": "nx run-many --target=build --all",
-      "start": "nx run-many --target=start --all",
       "dev": "nx run-many --target=dev --all",
-      "start:backend": "nx start backend --verbose --project backend",
-      "start:frontend": "nx start frontend --verbose --project frontend",
+      "dev:backend": "nx dev backend --verbose --project backend",
+      "dev:frontend": "nx dev frontend --verbose --project frontend",
+      "build": "nx run-many --target=build --all",
+      "build:backend": "nx build backend --verbose --project backend",
+      "build:frontend": "nx build frontend --verbose --project frontend",
       "clean": "node scripts/clean.js --node_modules --dist --.nx --.next",
       "clean:dist": "node scripts/clean.js --dist --.nx"
     },
