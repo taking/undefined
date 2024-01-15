@@ -1,0 +1,34 @@
+name: bun build & test
+
+on:
+  push:
+    branches: ['develop'] # develop branch 에 push했을 때 workflow가 실행
+
+jobs:
+  backend:
+    name: backend bun build & test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Source Code Checkout
+        uses: actions/checkout@v3
+      - name: Set up bun
+        uses: oven-sh/setup-bun@v1
+
+      # run any `bun` or `bunx` command
+      - run: bun install
+      - run: bun run build:backend
+      - run: bun run build:test
+      
+  frontend:
+    name: frontend bun build & test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Source Code Checkout
+        uses: actions/checkout@v3
+      - name: Set up bun
+        uses: oven-sh/setup-bun@v1
+
+      # run any `bun` or `bunx` command
+      - run: bun install
+      - run: bun run build:frontend
+      - run: bun run build:test

@@ -1,0 +1,26 @@
+{
+    "name": "undefined-project-monorepo",
+    "description": "",
+    "version": "1.0.0",
+    "private": true,
+    "type": "module",
+    "scripts": {
+      "build": "nx run-many --target=build --all",
+      "start": "nx run-many --target=start --all",
+      "dev": "nx run-many --target=dev --all",
+      "start:backend": "nx start backend --verbose --project backend",
+      "start:frontend": "nx start frontend --verbose --project frontend",
+      "clean": "node scripts/clean.js --node_modules --dist --.nx --.next",
+      "clean:dist": "node scripts/clean.js --dist --.nx"
+    },
+    "workspaces": [
+      "apps/*",
+      "packages/"
+    ],
+    "devDependencies": {
+      "nx": "^17.2.8"
+    },
+    "engines": {
+      "node": ">=16.0.0"
+    }
+  }
